@@ -4,8 +4,8 @@ import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // Assets
-import logo from './images/logo.svg';
-import './css/Header.css';
+import logo from './images/logo-luy.svg';
+//import './css/Header.css';
 
 class Header extends Component {
   static propTypes = {
@@ -16,7 +16,6 @@ class Header extends Component {
   render() {
     const { title, items} = this.props;
 
-
     return (
       <div className="Header">
         <header className="Logo">
@@ -25,7 +24,7 @@ class Header extends Component {
           <ul className="Menu">
             {items && items.map ((item,key) => <li key={key}><Link to={item.url}>{item.title}</Link></li>)} 
           </ul>
-        </header>
+          </header>
       </div>
     );
   }

@@ -10,7 +10,6 @@ import Trabajos from './components/Trabajos';
 import Page404 from './components/Page404';
 
 
-
 // <Switch> // donde dos rutas coinciden la ejecuta y corta
 
 const AppRoutes = () =>

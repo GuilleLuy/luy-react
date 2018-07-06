@@ -1,0 +1,139 @@
+{
+  "lang" : 
+  [
+    {
+
+"lang" : "es",
+"idioma" : "es",
+"idioma_actual" : "es",
+
+"idioma_2" : "en",
+"idioma_2_text" : "Go to English Version",
+
+"url_works" : "trabajos/",
+"contact_url" : "contacto/",
+
+"url_home" : "welcome/",
+"url_works_switch" : "works/",
+
+"err_404" : "404",
+"err_404_t_e" : "no hay",
+"err_404_t_e_2" : "naranja",
+"err_404_t_largo" : "la url ingresada no existe o <br/> es errónea.",
+
+"err_403" : "403",
+"err_403_t_e" : "no ",
+"err_403_t_e_2" : "permitido",
+"err_403_t_largo" : "contenido de acceso restringido.",
+
+"err_410" : "410",
+"err_410_t_e" : "esto ya",
+"err_410_t_e_2" : "no está",
+"err_410_t_largo" : "contenido eliminado.",
+
+"err_413" : "..    :´(",
+"err_413_t_e" : "- te",
+"err_413_t_e_2" : "copaste",
+"err_413_t_largo" : "pedime algo más sencillo.",
+
+"err_503" : "503",
+"err_503_t_e" : "sin",
+"err_503_t_e_2" : "servicio",
+"err_503_t_largo" : "temporalmente no disponible.",
+
+"err_50x" : "..    :´(",
+"err_50x_t_e" : "- sin",
+"err_50x_t_e_2" : "servicio",
+"err_50x_t_largo" : "temporalmente no disponible.",
+
+"titulo" : "Guillermo Luy",
+"error_db" : "Error: No es posible conectarse a la base de datos.",
+
+"img_de" : "Imagen de",
+
+"texto" : "diseño web, 3d, animaciones, marcas, logos, editorial, desarrollo web",
+"cliente_desc" : "Diseño gráfico - Desarrollo web",
+
+"form_name" : "nombre",
+"form_subject" : "asunto",
+"form_mensaje" : "mensaje",
+"form_send" : "Enviar",
+
+"form_name_ph" : "Ingrese su nombre",
+"form_email_ph" : "No olvides la @ y todo eso...",
+"form_subject_ph" : "Todo mensaje tiene un asunto",
+"form_mensaje_ph" : "Ingrese aquí su mensaje",
+
+"required" : "(obligatorio)",
+"invalid" : "(no es válido)",
+"mail_sent" : "Mail enviado exitosamente. Muchas gracias.",
+"mail_fail" : "Hubo problemas al enviar el mail :(",
+
+"share" : "Compartir",
+"close" : "Cerrar",
+"fullscreen" : "Pantalla completa",
+"next" : "Siguiente",
+"prev" : "Anterior",
+"fancy_error" : "No se puede acceder al contenido.<br/> Intente nuevamente más tarde.",
+"slide_play" : "Comenzar slideshow",
+"slide_stop" : "Pausar slideshow",
+"thums" : "Imágenes",
+"descargar" : "Descargar",
+"zoom" : "Acercar",
+
+"facebook_hi" : "¡Hola! ¿En qué puedo ayudarte?",
+"title_dis" : "Diseño gráfico: logo y editorial",
+"title_des" : "Diseño y desarrollo web - 3D",
+
+"aca" : "acá", 
+"empezar" : "Empezar",
+"servicios" : "servicios",
+"clientes" :  "clientes",
+"portfolio" : "Portfolio completo",
+"title_home" : "<strong>Guillermo Luy.</strong> Diseño gráfico & Programación.",
+"title_diseno" : "diseño",
+"title_progra" : "programación",
+"trab_dest" : "Trabajos destacados:",
+"serv_dis_des" : "Desarrollo/Diseño web",
+"serv_redes" : "Gestión/Contenidos en redes sociales",
+"serv_3d" : "3d: modelado y animación",
+"serv_vid" : "Videos, publicidades",
+"serv_impr" :"Impresos: folletos, <span>gigantografías, banners:</span>",
+"serv_folletos" :"Folletos varios",
+"ademas" : "Además",
+"serv_regist" : "Registro de dominios, alojamiento (hosting) de sitios web",
+"serv_gestion" : "Gestión de trabajos de impresión",
+"contact_text" : "Contacto con Guillermo Luy",
+"contact_call" : "Llamar a Guillermo Luy",
+"tel" : "Tel",
+
+"ir_anterior" : "anterior",
+"ir_siguiente" : "siguiente",
+"ir_home" : "volver a inicio",
+
+
+
+"link_dis_3d" :  "<a href='javascript:' class='link_3d col_3'>Modelador y animador 3d</a>",
+"link_dis_web" : "<a href='javascript:' class='link_web col_2'>Diseño web</a>",
+"link_sitio_web" : "<a href='javascript:' class='link_web col_3'>sitio web</a>",
+"link_sitios_web" : "<a href='javascript:' class='link_web col_3'>sitios web</a>",
+"link_impr" :  "<a href='javascript:' class='link_impr col_3'>impresos</a>",
+"link_des_web" :  "<a href='javascript:' class='link_web col_2'>Desarrollo Web</a>",
+"link_todos" :  "<a href='javascript:' class='link_todos col_2'>Diseño Gráfico</a>",
+
+
+"link_manuales" :  "<a href='http://www.bounousmaquinarias.com/pdf/VB-100-HIDRO-HVP_manual_de_uso.pdf' class='link-bounous-manual col_1' target='_blank'>manuales de productos</a>",
+
+"link_web_simple" : "<a href='http://bounousmaquinarias.com' class='col_5' target='_blank'>contenido fijo</a>",
+"link_web_blog" : "<a href='http://rinconrh.com.ar' target='_blank' class='col_1'>blogs</a>",
+"link_web_catalogos" : "<a href='http://minfraestructura.com.ar' class='col_5' target='_blank'>catálogos de productos</a>",
+"link_tiendas" : "<a href='https://thedarksideseeds.com' target='_blank' class='col_3'>tiendas virtuales</a>",
+"link_web_redes" : "<a class='link_red col_2' href='javascript:'>redes sociales</a>",
+"link_videos" : "<a class='link_vid col_5' href='javascript:'>videos</a>",
+"fancy_view_source" : "Esto",
+"view_source" : "Control + U",
+"url_linkedin" : "https://www.linkedin.com/in/guillermoluy/?locale=es_ES"
+
+    }
+  ]
+}

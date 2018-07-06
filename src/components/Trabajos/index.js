@@ -1,13 +1,22 @@
 // Dependences
 import React, { Component }  from 'react';
+import { Link  } from 'react-router-dom';
+import items from '../../data/trabajos';
 
 class Trabajos extends Component {
     render() {
         return (
-            <div className="Trabajos">
-              <h1>Listado de trabajos</h1>
+            <div className="trabajos">
+            <h1>Listado de trabasjos</h1>
+            <ul className="trabajosListado">
+                {items && items.map ((item,key) => 
+                <li key={key}>
+                <Link to={item.url}>{item.titulo}</Link>
+                </li>
+                )} 
+            </ul>
             </div>
-        );
+        )
     }
 }
 

@@ -33,25 +33,61 @@ export default {
         new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
+       rules: [
+            {
+                test: /\.js?$/, 
+                include: PATHS.src,
+                loaders: ['babel-loader']
+            },
+            {
+                test: /(\.css?)$/,
+                loaders: ['style-loader', 'css-loader']  
+            },
 
-       rules: [{
-      //  loaders: [{
-            test: /\.js?$/, 
-            include: PATHS.src,
-            loaders: ['babel-loader']
-        },
-        {
-            test: /(\.css?)$/,
-            loaders: ['style-loader', 'css-loader']  
-        },
-        {
-            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            // {
+            //     test: /\.less$/,
+            //     use: [
+            //       {
+            //         loader: "style-loader"
+            //       },
+            //       {
+            //         loader: "css-loader",
+            //         options: {
+            //           sourceMap: true,
+            //           modules: true,
+            //           localIdentName: "[local]___[hash:base64:5]"
+            //         }
+            //       },
+            //       {
+            //         loader: "less-loader"
+            //       }
+            //     ]
+            //   },
 
-        }]
+            {
+                test: /\.less$/,
+                use: ['style-loader','css-loader',"less-loader"]
+            },
+            
+
+
+            // {
+            //     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            //     loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            // }]
+            {
+                test: /\.(ttf|eot|svg|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loaders: ['file-loader']
+            },
+           
+            { 
+                test: /\.ttf$/i,
+                loader: 'null-loader',
+            }
+
+        ]
     }
 };
-
 
 // export default {
 //     entry: [

@@ -1,6 +1,9 @@
 // Dependences
 import React, { Component } from 'react';
+
 import propTypes from 'prop-types';
+
+import './Global/less/_import_diseno.less';
 
 // Components
 import Header from './Global/Header';
@@ -9,16 +12,20 @@ import Footer from './Global/Footer';
 
 // Data
 import items from '../data/menu';
+import { lang } from '../data/es';
 
 class App extends Component {
   static propTypes = { 
     children: propTypes.object.isRequired
-  };
-  render() {
+  }
+
+  render() {    
     const { children } = this.props;
+    var l = lang[0];
     return (
       <div className="App">
-        <Header title="Guillermo Luy. Diseño Gráfico &amp; Programación" items={ items } />
+        <Header title={"Guillermo Luy. " + l.cliente_desc} 
+        items={ items } />
           <Content body={children} />
         <Footer />
       </div>
