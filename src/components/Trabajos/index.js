@@ -11,7 +11,7 @@ class Trabajos extends Component {
             <ul className="trabajosListado">
                 {items && items.map ((item,key) => 
                 <li key={key}>
-                <Link to={item.url}>{item.titulo}</Link>
+                <Link to={'trabajos/'+item.url}>{item.titulo}</Link>
                 </li>
                 )} 
             </ul>

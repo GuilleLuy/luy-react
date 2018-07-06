@@ -69,25 +69,29 @@ export default {
                 use: ['style-loader','css-loader',"less-loader"]
             },
             
-
-
             // {
             //     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             //     loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-            // }]
+            // },
             {
-                test: /\.(ttf|eot|svg|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loaders: ['file-loader']
-            },
-           
-            { 
-                test: /\.ttf$/i,
-                loader: 'null-loader',
+                test: /\.(ttf|ico|svg|eot|jpg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+                loaders: ['url-loader']
+                //([?#]+[A-Za-z0-9-_]*)*$/,
             }
+
+            // {
+            //     test: /\.(jpg|png|ico|eot|svg|ttf|woff|woff2)$/,
+            //     loader: 'file-loader?name=./fonts/[name].[ext]'
+            //   }
+
 
         ]
     }
 };
+
+
+
+
 
 // export default {
 //     entry: [

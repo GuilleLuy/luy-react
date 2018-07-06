@@ -16,6 +16,54 @@
 @top_menu: (@tamano_final * @total_trabajos) / 2; ;
 
 
+// nunca usar paths absolutos acá
+
+
+@min_1600:~"only screen and (min-width:1650px)";
+@max_1600:~"only screen and (max-width:1649px)";
+
+@notebook:~"only screen and (min-width:1301px) and (max-width:1649px)";
+
+@min_1300:~"only screen and (min-width:1300px)";  
+@max_1300:~"only screen and (max-width:1299px)";
+
+@min_900:~"only screen and (min-width:900px)";
+@max_900:~"only screen and (max-width:899px)";
+
+@min_700:~"only screen and (min-width:710px)";
+@max_700:~"only screen and (max-width:709px)";
+
+@tablet:~"only screen and (min-width:710px) and (max-width:1300px)";
+
+@celu-mas:~"only screen and (min-width:491px) and (max-width:710px)";
+@celu:~"only screen and (max-width:490px)";
+
+@petiso:~"only screen and (max-height:490px)";
+
+@path_media: '../media/'; 
+@img: '@{path_media}img/'; 
+@img_trab: '@{img}trabajos/';
+@img_gal: '@{img}gal/';
+
+// @bkg_trab_img_path:'../media/img/trabajos/bg/'; 
+@font_path:'@{path_media}fonts';
+
+
+@font_1:'helvetica_neue_roman-webfont'; 
+
+@font-face { @esta_fuente:@font_1; font-family:@font_1;
+font-weight:100; font-style:normal; 
+src:
+  url('@{font_path}/@{font_1}.ttf') format('truetype'),
+  url('@{font_path}/@{font_1}.svg#@{font_1}') format('svg'),
+  url('@{font_path}/@{font_1}.eot'),
+  url('@{font_path}/@{font_1}.eot?#iefix') format('embedded-opentype'),
+  url('@{font_path}/@{font_1}.svg#@{font_1}') format('svg');
+}
+
+
+
+
 .fn-botones_abajo_der () { top:inherit; position: fixed; cursor:pointer; left: inherit; right:@right_pos;
 @media @max_900 { width: 51px; height: 50px;   // left: 320px; right:@right_pos/2; 
   a { width: 51px; height: 50px; }
@@ -457,52 +505,6 @@ body * { font-family:@font_1; text-decoration:none;
 // tamaños de resoluciones en todos
 // @puntero_con_panel:~"only screen and (min-width:1250px)";
 // @puntero_con_panel_menor:~"only screen and (max-width:1250px)";
-
-
-
-@min_1600:~"only screen and (min-width:1650px)";
-@max_1600:~"only screen and (max-width:1649px)";
-
-@notebook:~"only screen and (min-width:1301px) and (max-width:1649px)";
-
-@min_1300:~"only screen and (min-width:1300px)";  
-@max_1300:~"only screen and (max-width:1299px)";
-
-@min_900:~"only screen and (min-width:900px)";
-@max_900:~"only screen and (max-width:899px)";
-
-@min_700:~"only screen and (min-width:710px)";
-@max_700:~"only screen and (max-width:709px)";
-
-@tablet:~"only screen and (min-width:710px) and (max-width:1300px)";
-
-@celu-mas:~"only screen and (min-width:491px) and (max-width:710px)";
-@celu:~"only screen and (max-width:490px)";
-
-@petiso:~"only screen and (max-height:490px)";
-
-@path_media: '/src/components/Global/media/';
-
-@img: '@{path_media}img/'; 
-@img_trab: '@{img}trabajos/';
-@img_gal: '@{img}gal/';
-
-@bkg_trab_img_path:'/media/img/trabajos/bg/'; 
-@font_path:'@{path_media}fonts';
-
-
-@font_1:'helvetica_neue_roman-webfont'; 
-@font_1_fn:'helvetica_neue_roman-webfont';
-
-@font-face { @esta_fuente:@font_1; font-family:@font_1; @font_file_name:@font_1_fn; 
-src:
-  url('@{font_path}/@{font_file_name}.ttf') format('truetype'),
-  url('@{font_path}/@{font_file_name}.svg#@{font_1}') format('svg'),
-  url('@{font_path}/@{font_file_name}.eot'),
-  url('@{font_path}/@{font_file_name}.eot?#iefix') format('embedded-opentype'),
-  url('@{font_path}/@{font_file_name}.svg#@{font_1}') format('svg');
- font-weight:100; font-style:normal; 
-}
 
 
 

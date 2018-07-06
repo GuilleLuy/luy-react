@@ -21,48 +21,45 @@ class Inicio extends Component {
             destacados
         }
     }
-
+   
     render() {
       var l = lang[0]
       document.body.classList.add('body_home');
-
        const dests = this.state.destacados.map((dest, i) => {
+        var categorias = dest.cats.replace(/[,]+/g, '</strong><strong>');
+    
+
         return (
             <article className={dest.cliente.replace(/[. ]+/g, '-').toLowerCase()} id={"work_" + dest.id} key={i}>
                 <h2>
                     <span>{dest.cliente}</span>
-                    <strong>{dest.cats}</strong>
+                    <strong dangerouslySetInnerHTML={{__html: categorias }} />
                 </h2>
 {/*             
                     <strong>{{ cats_utf8|replace({',':'</strong><strong>'})|raw }}</strong>
                     {dest.cats.replace(/[., ]+/g, '</strong><strong>')}
                     <strong>Impresos</strong> <strong>Marca</strong><strong>Diseño Web</strong><strong>Redes sociales</strong>
-                    
 */}
                 <p>{dest.desc}</p>
-
                 <img 
-                id={"dest-"+dest.cliente.replace(/[. ]+/g, '-').toLowerCase()} 
-                alt={"Imagen de "+dest.cliente+" | "+dest.cats }
-                srcSet={`
-                ${require("../Global/media/img/trabajos/ss/"+dest.img_name+".jpg")} 600w, 
-                ${require("../Global/media/img/trabajos/sm/"+dest.img_name+".jpg")} 900w, 
-                ${require("../Global/media/img/trabajos/me/"+dest.img_name+".jpg")} 1300w, 
-                ${require("../Global/media/img/trabajos/hd/"+dest.img_name+".jpg")} 1920w
-                `}
-              
-                sizes="(max-width: 600px) 580px, (max-width: 899px) 780px, (max-width: 1400px) 1180px, 1620px" 
-                src={require("../Global/media/img/trabajos/me/"+dest.img_name+".jpg")} />
+                    className="destacados"
+                    id={"dest-"+dest.cliente.replace(/[. ]+/g, '-').toLowerCase()} 
+                    alt={"Imagen de "+dest.cliente+" | "+dest.cats }
+                    srcSet={`
+                        ${require("../Global/media/img/trabajos/ss/"+dest.img_name+".jpg")} 600w, 
+                        ${require("../Global/media/img/trabajos/sm/"+dest.img_name+".jpg")} 900w, 
+                        ${require("../Global/media/img/trabajos/me/"+dest.img_name+".jpg")} 1300w, 
+                        ${require("../Global/media/img/trabajos/hd/"+dest.img_name+".jpg")} 1920w
+                    `}
+                    sizes="(max-width: 600px) 580px, (max-width: 899px) 780px, (max-width: 1400px) 1180px, 1620px" 
+                    src={require("../Global/media/img/trabajos/me/"+dest.img_name+".jpg")} />
             </article>
-            
-            
-
             )
         })
 
-
         return (
-<div className="Inicio">
+
+    <div className="Inicio">
 
     <header id='header_home'>
         <p id='punto' className='nar'><span>{ l.empezar }</span></p>

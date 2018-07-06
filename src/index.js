@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes';
 
 // Assets
-import './index.css';
+//import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -17,5 +17,4 @@ render(
     </Router>,
     document.getElementById('root')
 );
-
 registerServiceWorker();
