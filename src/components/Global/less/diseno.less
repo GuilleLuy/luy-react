@@ -6,41 +6,98 @@
 // }
 
 
+.hide { display: none !important; }
+.show { display: block !important; }
 
-body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco; 
+.over_show { overflow-y: visible !important;  }
 
-  header#header_home { position:relative; top:0; left:0; width: 100%;  height: 100vh; z-index: 4; background:@negro;  
-    p#punto {  border-radius: 100%; position: fixed; z-index: 6; width: 50px; height: 50px; top:28vh; left: 23.8vw; 
+
+
+
+@keyframes Logo1 { 
+  0% { transform:rotate(0deg); } 
+  25% { transform:rotate(90deg); }
+  50% { transform:rotate(180deg); }
+  52% { margin-left:0; }
+  54% { margin-left:-5px; }
+  59% { margin-left:-12px; }
+  60% { margin-left:-5px; }
+  61% { margin-left:0; }
+  80% { transform:rotate(270deg); }
+  100% { transform:rotate(360deg); }
+}
+// @-webkit-keyframes rotatepoint { .keyf-rotatepoint; }
+// @keyframes rotatepoint { .keyf-rotatepoint; }
+// .rotatepoint () {  animation-name:rotatepoint; -webkit-animation-name:rotatepoint;  -webkit-animation-iteration-count:infinite; animation-iteration-count:infinite; }
+// .rotate_point { .tiempo_10; .rotatepoint; }
+
+
+@keyframes Logo2 {
+  to { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+}
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+@keyframes marginTop {
+  from { padding-top:0; }
+  to { padding-top:5vh }
+}
+
+
+header#header {
+  div { position: absolute; width: 50vw; height: 20%; top:0;
+    &#home-pres { left:0; width: 100vw;  z-index: 0;  //display: none;
+      #h1-inicial { position: fixed; color:#4b4c45; top:7px; text-align:left; height: auto;  font-size:.9em;  
+        @media @celu {
+          font-size:.8em;
+        }
+        @media @min_900 { 
+          font-size:.8em; top:2.8vh; 
+        }
+      span { color:@naranja; margin-left:2px;  }
+      strong { color: @naranja; display: block; }
+     }
+      #pres-orange { background:@naranja; left:0;  }
+      #pres-black { background:@negro;  left:50vw;  }
+    } // &#home-pres
+  }
+}
+
+body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco; 
+  header#header { position:relative; top:0; left:0; width: 100%;  height: 100vh; z-index: 4; background:@negro; 
+    p#punto {  border-radius: 100%; position: fixed; z-index: 10; width: 50px; height: 50px; top:28vh; left: 23.8vw; animation: Logo1 infinite 10s linear; 
       span { display: none; }
-      &.nar { background: @naranja url('@{img}logo-luy-negro.svg') no-repeat center center / 70% 70%; }
-      &.neg { background: @negro url('@{img}logo-luy-naranja.svg') no-repeat center center / 70% 70%; width: 36px; height: 36px; }
-      &.quieto {  top:103vh; transform:scale(.4); }
+      &.nar { background: @naranja url('@{img}logo-luy-negro.svg') no-repeat center center / 70% 70%; 
+         cursor: pointer;
     }
-    div { position: absolute; width: 50vw; height: 100%; top:0;
-      &#home-pres { left:0; width: 100vw;  z-index: 1;  display: none;
+      &.neg { background: @negro url('@{img}logo-luy-naranja.svg') no-repeat center center / 70% 70%; width: 36px; height: 36px; animation: Logo2 infinite 6s linear; pointer-events: none;  }
+      &.quieto { margin-top:17vh; transform:scale(.1); opacity: 0; } //  .notransition; animation:none !important;
+    }
+
+      div { height: 100%;
+        &#home-pres { z-index: 9;
         h1#h1-title { position: absolute; width: 100vw; height: 100vh; 
-
         // error 404, falta responsivo:
-
           em { position:fixed; left: 30vw; font-style: normal;  font-size: 24vw; color:@naranja; 
             em { font-size: 20.9vw; clear: left; line-height: .29em; float: left; width: 100%; margin:0 0 0 4.1vw }
-          }
+          } 
           strong { font-size: 19.8vw; font-weight: normal; color:@blanco; left:17vw; position: fixed; bottom:14vh; }
           p { font-size:7vw; width:55%; position: fixed; top:40vh; left:18vw; color:fadeout(@blanco, 70%); }
-
           @media @min_700 { 
             strong { bottom:0 ; }
             p {  font-size:3.35vw; width: 25%;}
           }
-
           @media @notebook {
             p { width: 70%; left: 20%; top:61vh; }
           }
-
           @media @tablet {
             p { width: 70%; left: 15%; top:59vh; }
           }
-
           span { position: absolute;
             &.h1_1 { top:26.3vh; left:35.9vw; color:@negro; font-weight: bold; font-size: 7.06vw;
               span { color: @naranja; font-weight: normal; } // ermo
@@ -51,9 +108,8 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
             &.h1_2 { left:49.65vw; top:30vh; font-weight: bold; } // Luy
             &.h1_3 { left:49.87vw; top:34.1vh; } // diseño &
             &.h1_4 { left:49.75vw; top:37.8vh; font-size:3.856vw; } //  programación
-
             @media @min_700 { 
-              &.h1_1 { top:26.3vh; left:41.8vw; font-size: 4.06vw; } // Guill  
+              &.h1_1 { top:26.3vh; left:41.8vw; font-size: 4.06vw;  } // Guill  
               &.h1_2,
               &.h1_3,
               &.h1_4 { font-size:5.84vw; }
@@ -62,24 +118,8 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
               &.h1_4 { left:49.75vw; top:48.8vh; font-size:3.856vw; } // programación
             }
           }
-
-          &.h1_header { position: fixed; color:#4b4c45; top:7px; text-align:left; height: auto;  font-size:.9em;  
-              @media @celu {
-                font-size:.8em;
-              }
-              @media @min_900 { 
-                font-size:.8em; top:2.8vh; 
-              }
-            span { color:@naranja; margin-left:2px;  }
-            strong { color: @naranja; display: block; }
-          }
-        } // h1#h1-title
-        #pres-orange { background:@naranja; left:0;  }
-        #pres-black { background:@negro;  left:50vw;  }
+        } // h1#h1-title        
       } // &#home-pres
-
-
-
     } // div
     span.che { position: fixed; color:@blanco; }
     span#pst { left:31vw; top: 29vh; font-size: 20px; .anim_pst;  }
@@ -98,16 +138,16 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
     }
   } // header en home
 
-  section#works { position: relative; display: block; // background: #FFF;
-    article { position: relative; z-index: 1; border:none !important; margin-bottom: -4px; // para que no haga el separador entre trabajos -- min-height: 100vh; 
+  section#works { display: block; // background: #FFF;
+    article { position: relative; z-index: 1; border:none !important; margin-bottom: -4px; // para que no haga el separador entre clientes -- min-height: 100vh; 
+      background-size: 100% auto !important; min-width: 100vw; min-height: 100vh;
       img { margin:0; width:100%; height: auto !important; position: relative; z-index: 0; display: inline-block; vertical-align: middle; }
-
       a,
       video { position: absolute; // height:28%;
         &.pronto-express { right:4vw; top:6.3vw; width:40%; } //  top:4vw;
         &.canapina { right:3.05vw; top:17.6vw; width:43.5%; transform: rotate(3deg); } //border:3px dashed gray 
-
       }
+
       p { display: none; }
 
       h2 { position: fixed;  z-index: 3;  opacity: 0; top:50%; background:fadeout(black,25%); padding: 2vh; border-radius:.5vh; pointer-events: none; 
@@ -171,34 +211,54 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
               width: 45px; height: 46px;
           }
         }
-      } // h2
+      }
 
-      background-size: 100% auto !important; min-width: 100vw; min-height: 100vh;
-
-      &.vialfe { background:url('@{img_trab}ss/vialfe.jpg');  }
-      &.bounous { background:url('@{img_trab}ss/bounous.jpg'); }
-      &.pronto-express { background:url('@{img_trab}ss/pronto-express.jpg'); }
-      &.auto-v5 { background:url('@{img_trab}ss/auto-v5.jpg'); }
-      &.canapina { background:url('@{img_trab}ss/canapina.jpg'); }
-      &.minfraestructura { background:url('@{img_trab}ss/minfraestructura.jpg'); }
-      &.marcas { background:url('@{img_trab}ss/marcas.jpg'); }
-      &.folletos { background:url('@{img_trab}ss/folletos.jpg'); }
-      &.cyd-schaffer { background:url('@{img_trab}ss/cyd-schaffer.jpg'); }
-      &.bodyski { background:url('@{img_trab}ss/bodyski.jpg'); }
-      &.xava-boards { background:url('@{img_trab}ss/xava-boards.jpg'); }
-      &.carteles { background:url('@{img_trab}ss/carteles.jpg'); }
+      &.vialfe { background:url('@{img_trab}clientes/ss/vialfe.jpg');  }
+      &.bounous { background:url('@{img_trab}clientes/ss/bounous.jpg'); }
+      &.pronto-express { background:url('@{img_trab}clientes/ss/pronto-express.jpg'); }
+      &.auto-v5 { background:url('@{img_trab}clientes/ss/auto-v5.jpg'); }
+      &.canapina { background:url('@{img_trab}clientes/ss/canapina.jpg'); }
+      &.minfraestructura { background:url('@{img_trab}clientes/ss/minfraestructura.jpg'); }
+      &.marcas { background:url('@{img_trab}clientes/ss/marcas.jpg'); }
+      &.folletos { background:url('@{img_trab}clientes/ss/folletos.jpg'); }
+      &.cyd-schaffer { background:url('@{img_trab}clientes/ss/cyd-schaffer.jpg'); }
+      &.bodyski { background:url('@{img_trab}clientes/ss/bodyski.jpg'); }
+      &.xava-boards { background:url('@{img_trab}clientes/ss/xava-boards.jpg'); }
+      &.carteles { background:url('@{img_trab}clientes/ss/carteles.jpg'); }
 
     } // article
   } // section#works
 
-  &.body_servs { background: @negro;
-    
+} // body#body_home 
+
+
+  body#body_servs { background: @negro; 
+
     nav#sidebar { display: none !important;}
     #footer nav#footer_nav { display: none;}
-    header#header_home { height: 5vh; }
 
 
+    header#header { height: 5vh; overflow: hidden; max-width: 99%;
     
+      #home-pres { left:0; width: 90vw;  z-index: 0;  //display: none;
+        //#h1-inicial { width: 100%; text-align: right; }
+      //   #h1-inicial { position: fixed; color:#4b4c45; top:7px; text-align:left; height: auto;  font-size:.9em;  
+      //     @media @celu {
+      //       font-size:.8em;
+      //     }
+      //     @media @min_900 { 
+      //       font-size:.8em; top:2.8vh; 
+      //     }
+      //   span { color:@naranja; margin-left:2px;  }
+      //   strong { color: @naranja; display: block; }
+      //  }
+        #pres-orange {width: 60vw;  }
+        #pres-black { left:60vw; width: 38vw;  }
+      
+      }
+    }
+
+
     aside#services { position: relative; color:#666; width:85vw; margin:8vh 0 0 5%; display:block; float: left; padding-bottom:17vw;
       // colores:
       .col_1 {  color:#6c6c53; } //desaturate(yellow, 90%); 
@@ -229,7 +289,6 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
             &:hover { filter:invert(0) !important;  }
           }
         }
-
         @media @min_700 { width: 40vw;
           p { font-size:1.8vw; }
         }
@@ -258,14 +317,11 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
         } // ul
       } // div#texto_init
 
-      section#servs_links { width:30vw; position: fixed; top:10vh; right: 18vw; //float: right;
-
+      section#servs_links { width:30vw; position: fixed; top:10vh; right: 18vw;  scroll-behavior: smooth; 
         @media @min_700 { width: 14vw; }
         @media @max_700 { right: 9vw; }
-       
-
         div#links { display: block;
-          h2 { display: none; }
+          h1 { display: none; }
           ul { display: block; margin:0;
             li { font-size: 1.2vw; 
               span  { float: left; clear: both; margin:4vh 0 1vh; width: 100%; color:#2d3333; font-size:4vw; line-height:.9em; font-weight: bold;
@@ -276,9 +332,7 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
               a { float:left; clear: both; width: 100%; font-weight: bold; line-height: 1em !important;
                 &:hover { filter:invert(1); }
               }
-
               &:first-child span { margin-top:0; }
-
               &.shine { margin-top: 75px !important; }
             }
           } // ul
@@ -288,11 +342,249 @@ body.body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
       } // section#servs_links
     } // aside#services
     section#works  { display: none; }
-  } // &.body_servs
-} // body#body_home 
+   
+} //   body#body_servs 
+
+
+
+
+nav#menu { width: 0; height: 0; overflow: hidden;  // width: 100%; height: 100vh;  height:33vh;  z-index: 2; display: none;
+  ul { 
+    li { position: fixed;  // width: 62px; height: 60px;
+
+      a { text-transform: lowercase; display:none; }
+      
+      &.scroll,
+      &.rotate,
+      &.quieto { 
+        a { display: inline;}
+      }
+      
+      &.top { 
+        a { color:@negro; }
+      }
+      &.clientes.scroll,
+      &.servicios.rotate {  z-index:10;
+        a span { display: inline; }
+      }
+      
+      &.servicios {
+          @media @max_900 {
+            width: 31px; height:30px;
+            a { color:@negro; width: 31px; height:30px; float: left; }
+          }
+        a { color:@negro; }
+      }
+
+
+      &.none { display: none !important; }
+      
+
+      &.flags,
+      &.mail,
+      &.messenger,
+      &.skype,
+      &.trabajos { z-index: 5; position: fixed;  width: 31px; height:30px;  // transform:scale(0)
+        a { float:left; width: 31px; height:30px; }
+        @media @min_900 { width: 62px; height:60px;
+          a { width: 62px; height:60px; }
+        }
+      } 
+
+      &.flags { top:10px; right:10px; 
+        &.flag_es a { background: url('@{img}spain.png') no-repeat center bottom / 100%  100%; }
+        &.flag_en a { background: url('@{img}usa.png') no-repeat center bottom / 100% 100%; }
+      }
+
+      &.mail { background: url('@{img}mail.png') no-repeat center bottom / 100%  100%; top:10px; right:55px; }
+      &.messenger { background: url('@{img}messenger.png') no-repeat center bottom / 100%  100%; top:12px; right:100px; }
+      &.skype { top:12px; right: 145px;
+        #SkypeButton_Call_guillermo_luy_1 { width: 62px; float: left;
+          a { background: url('@{img}skype.png') no-repeat center bottom / 100%  100%;
+            span,
+            img { display: none;} 
+          }
+        }
+      }
+
+      &.trabajos { .fn-botones_abajo_der; bottom:70px;
+        &.quieto {  background: url('@{img}trabajos.png') no-repeat center bottom / 100% 100%; z-index: 10; }
+        
+        @media @min_900 { bottom:90px; }
+
+     }
+     &.clientes.quieto.prescroll { 
+      a { color:@naranja !important; margin-top:2vh } 
+    }
+     &.quieto { 
+       a { font-size:0; }
+     }
+
+        @media @min_900 { 
+          &.flags { top:13px; }
+          &.mail { top:12px; right:77px; }
+          &.messenger { right:150px; top:14px; }
+          &.skype { top:14px; right:223px;
+            #SkypeButton_Call_guillermo_luy_1 { width: 62px !important; 
+              a { background: url('@{img}skype.png') no-repeat center bottom / 100%  100%; }
+          }
+        }
+
+      }
+      
+      &:hover { filter:sepia(1); }
+      // &.trabajos { display: none; }
+     
+    } // li
+  } // ul
+} // nav
+
+
+@keyframes seVanima {
+  to { left:27vw !important;  transform: scale(3) }
+  from { top:2vh; left: 0 !important; transform: scale(1) }
+}
+
+@keyframes opacida  {
+  to { opacity: 0; transform: rotate(360deg);  }
+  from { opacity: 1; transform: rotate(0deg);  }
+}
+
+body#body_home {
+  nav#menu ul li {
+    &.servicios.rotate { display: block; font-weight: bold; letter-spacing: 1.3px; .tiempo_1;
+      a { color:@negro; padding:.5vh; position: fixed; transform:rotate(51deg); left:27.1vw; top:38.6vh; font-size:5.02vw; 
+        @media @petiso { transform:rotate(0deg); left:20vw; font-size:3.08vw; }
+        @media @min_700 { left:24.1vw; top:35.6vh; font-size:1.48vw; }
+
+        @media @notebook { left:25.1vw; top:37vh; font-size:1.48vw; }
+        @media @tablet { transform:rotate(0deg); top:38vh; left:17.2vw; font-size:4vw; }
+
+      }
+    }
+    &.servicios.rotate.rotate_2 { transform:rotate(-14deg); }
+
+
+    &.servicios.rotate.quieto { top:inherit !important; cursor:pointer; left: inherit !important; right:@right_pos !important;
+      a { left:inherit !important; font-size:10px; color:@negro; text-align: center }
+      &:after,
+      a { float: left;  background: url('@{img}servicios.png') no-repeat center bottom / 100% 100% !important; animation: Logo2 infinite 4s linear; 
+        //&:hover {  content:'';  font-size: 0; }
+      }
+      a:after { color:fadeout(@blanco,50%); position: absolute; top:0; left:0; width: 100%; height: 100%; content:'pirili pam pum pam';  font-size: 0px; background: @negro url('@{img}logo-luy-naranja.svg') no-repeat center center / 60% 60% !important; border-radius: 100%; animation: opacida infinite 1s linear;  }
+      
+      a.es:after {
+        // aca debe ir:  content:'servicios';
+      }
+    }
+
+
+    &.servicios.quieto {  .fn-botones_abajo_der; bottom:20px; z-index: 10;  //animation: Logo2 infinite 8s linear;
+      a { animation: seVanima initial 2s all;  background: url('@{img}servicios.png') no-repeat center bottom / 100% 100%;   transform:rotate(359deg);  }
+      a:after {  font-size:0; color:@negro; }
+    }   
+
+    // &.servicios.quieto:not('rotate') { display: none; .fade_in_left;
+    //   a { animation: seVanima initial 2s all; transform:rotate(0deg); }
+    // }
+
+
+    &.clientes.scroll { .tiempo_1; .scroll-me; background:url('@{img}cunia.svg') no-repeat center bottom / 98% auto; position: fixed; top:92vh; right: 70vw; font-size: 1.58vw; text-shadow: 0 0 .3em black; padding-bottom: 8px;  color:@blanco; display: block; cursor: pointer; 
+      a { color:@blanco; font-size:2em; pointer-events: none;
+        //span {  color:@blanco; }
+        @media @min_900 { font-size:1.95vw }
+      }
+    } 
+    &.clientes.quieto {.tiempo_1;  top:101vh; right:70vw; color:@blanco;
+      a {  color:@negro; font-size: 1px; }
+    }
+
+
+    &.trabajos { // display: none; 
+      &.fade_in { display: block; .fade_in_left;  }
+    }
+    
+    // &.trabajos,
+    // &.quieto { z-index: 5; }
+  }
+}
+
+body#body_servs {
+  nav#menu ul li {
+    &.servicios { display: none; }
+    &.clientes.quieto { top:12px; left:15px; 
+      a { display: block; color:@negro; font-weight: bold; font-size:1.5em; z-index: 10;
+        &:before { content:"< "; font-size:1em; color:fadeout(@negro,40%); }
+      }
+    }
+    &.clientes.scroll { top:inherit; bottom:20px; 
+      span { display: none; }
+    }
+
+    &.clientes.scroll { position: fixed; .fn-botones_abajo_der; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; // right:@right_pos !important; //right:5.8vw !important; 
+
+      a { float: left; display: block;  }
+
+      .fn_clientesSize;
+
+    }
+
+  } //   nav#menu ul li
+} // body#body_home.body_servs
+
+
+body#body_works { 
+
+@p0:0%;
+@p33:13%;
+@p34:@p33 + .1;
+@p67:86.9%;
+@p68:@p67 + .1;
+@p100:100%;
+@color_1:rgba(242,106,33,1);
+// @color_2:rgba(224,228,204,1);
+@color_3:rgba(30,30,30,1);
+
+background: @color_1;
+background: -moz-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
+background: -webkit-gradient(left top, right top, color-stop(@p0, @naranja), color-stop(@p33, @naranja), color-stop(@p34, @naranja), color-stop(@p67, @negro), color-stop(@p68, @negro), color-stop(@p100, @negro));
+background: -webkit-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
+background: -o-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
+background: -ms-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
+background: linear-gradient(to right, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f26a21', endColorstr='#1e1e1e', GradientType=1 );
+
+width: 100%; height: 100vh;
+
+  nav#menu { display: block; z-index: 4;
+    ul li { 
+//      &.clientes { position: fixed; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; right:@right_pos !important; .fn_clientesSize; }
+      &.trabajos { display: none;}
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Footerzon y demases
+
 
 
 body { background:@blanco;
+
   footer#footer {  width: 100vw; height: 8vh; position: fixed; z-index:3; bottom:30px; left:80px;
     nav {
       &#footer_nav {  position: fixed; bottom:30px;
@@ -345,24 +637,22 @@ body { background:@blanco;
         &.hided {
           width: 100% !important; left:0 !important;
         }
-
-
       } // nav#footer_nav
 
       &#sidebar { padding:@margins * 2; border-radius: @margins * 3; right:20px; background: fadeout(blue,50%); position: fixed; top:@top_menu;  height: auto; 
         a { float: left; clear: both;  height: @tamano_final; width: @tamano_final; margin:@margins; .fade_in_right; border-radius: 50%; 
-          &.icon-vialfe { background: url('@{img_trab}clientes/vialfe.png'); background-size: 100% 100%; }
-          &.icon-bounous { background: url('@{img_trab}clientes/bounous.png'); background-size: 100% 100%; }
-          &.icon-pronto-express { background: url('@{img_trab}clientes/pronto-express.png'); background-size: 100% 100%; }
-          &.icon-auto-v5 { background: url('@{img_trab}clientes/auto-v5.png'); background-size: 100% 100%; }
-          &.icon-canapina { background: url('@{img_trab}clientes/canapina.png'); background-size: 100% 100%; }
-          &.icon-minfraestructura { background: url('@{img_trab}clientes/minfraestructura.png'); background-size: 100% 100%; }
-          &.icon-marcas { background: url('@{img_trab}clientes/marcas.png'); background-size: 100% 100%; }
-          &.icon-folletos { background: url('@{img_trab}clientes/folletos.png'); background-size: 100% 100%; }
-          &.icon-cyd-schaffer { background: url('@{img_trab}clientes/cyd-schaffer.png'); background-size: 100% 100%; }
-          &.icon-bodyski { background: url('@{img_trab}clientes/bodyski.png'); background-size: 100% 100%; }
-          &.icon-xava-boards { background: url('@{img_trab}clientes/xava-boards.png'); background-size: 100% 100%; }
-          &.icon-carteles { background: url('@{img_trab}clientes/carteles.png'); background-size: 100% 100%; }
+          &.icon-vialfe { background: url('@{img_trab}clientes/icon/vialfe.png'); background-size: 100% 100%; }
+          &.icon-bounous { background: url('@{img_trab}clientes/icon/bounous.png'); background-size: 100% 100%; }
+          &.icon-pronto-express { background: url('@{img_trab}clientes/icon/pronto-express.png'); background-size: 100% 100%; }
+          &.icon-auto-v5 { background: url('@{img_trab}clientes/icon/auto-v5.png'); background-size: 100% 100%; }
+          &.icon-canapina { background: url('@{img_trab}clientes/icon/canapina.png'); background-size: 100% 100%; }
+          &.icon-minfraestructura { background: url('@{img_trab}clientes/icon/minfraestructura.png'); background-size: 100% 100%; }
+          &.icon-marcas { background: url('@{img_trab}clientes/icon/marcas.png'); background-size: 100% 100%; }
+          &.icon-folletos { background: url('@{img_trab}clientes/icon/folletos.png'); background-size: 100% 100%; }
+          &.icon-cyd-schaffer { background: url('@{img_trab}clientes/icon/cyd-schaffer.png'); background-size: 100% 100%; }
+          &.icon-bodyski { background: url('@{img_trab}clientes/icon/bodyski.png'); background-size: 100% 100%; }
+          &.icon-xava-boards { background: url('@{img_trab}clientes/icon/xava-boards.png'); background-size: 100% 100%; }
+          &.icon-carteles { background: url('@{img_trab}clientes/icon/carteles.png'); background-size: 100% 100%; }
           &.close_nav { position: fixed !important; clear: none !important; float: none !important;  
             top: -(@tamano_final / 2); left:-(@tamano_final / 2); position: fixed !important; clear: none !important; float: none !important;
           }
@@ -386,7 +676,7 @@ body { background:@blanco;
         // }
       }
     } // nav
-   
+
     p { position: fixed; bottom:0; left:0; width: 100%; text-indent:13vw;  font-size: 11px; padding:4px 0 0 0; height: 16px; margin:0; color:@naranja; background:@negro; // text-align: center;
       a { color:fadeout(@naranja,50%); 
         &:hover { color:@naranja; background:@negro;  }
@@ -412,178 +702,10 @@ body { background:@blanco;
     }
 
 
-
-
   } // footer
 
-
-  nav#menu { position: fixed; z-index: 2; width: 100%; display: none; // width: 100%; height: 100vh;  height:33vh; 
-    ul {
-      li { position: absolute; // width: 62px; height: 60px;
-
-        a {
-          span { display: none; }
-        }
-        &.top { 
-          a { color:@negro; }
-        }
-        &.trabajos.scroll,
-        &.servicios.rotate {
-          a span { display: inline; }
-        }
-        &.servicios {
-          a { color:@negro; }
-        }
-
-
-        &.none { display: none !important; }
-        
-
-        &.flags,
-        &.mail,
-        &.messenger,
-        &.skype,
-        &.portfolio { position: fixed;  width: 31px; height:30px;  // transform:scale(0)
-          a { float:left; width: 31px; height:30px; }
-          @media @min_900 { width: 62px; height:60px;
-            a { width: 62px; height:60px; }
-          }
-        } 
-
-        &.flags { top:10px; right:10px; 
-          &.flag_es a { background: url('@{img}spain.png') no-repeat center bottom / 100%  100%; }
-          &.flag_en a { background: url('@{img}usa.png') no-repeat center bottom / 100% 100%; }
-        }
-
-        &.mail { background: url('@{img}mail.png') no-repeat center bottom / 100%  100%; top:10px; right:55px; }
-        &.messenger { background: url('@{img}messenger.png') no-repeat center bottom / 100%  100%; top:12px; right:100px; }
-        &.skype { top:12px; right: 145px;
-          #SkypeButton_Call_guillermo_luy_1 { width: 62px; float: left;
-            a { background: url('@{img}skype.png') no-repeat center bottom / 100%  100%;
-              span,
-              img { display: none;} 
-            }
-          }
-        }
-
-        &.portfolio { .fn-botones_abajo_der; bottom:70px; background: url('@{img}portfolio.png') no-repeat center bottom / 100% 100%;  
-          
-          @media @min_900 { bottom:90px; }
-
-      }
-
-          @media @min_900 { 
-            &.flags { top:13px; }
-            &.mail { top:12px; right:77px; }
-            &.messenger { right:150px; top:14px; }
-            &.skype { top:14px; right:223px;
-              #SkypeButton_Call_guillermo_luy_1 { width: 62px !important; 
-                a { background: url('@{img}skype.png') no-repeat center bottom / 100%  100%; }
-            }
-          }
-
-        }
-        
-        &:hover { filter:sepia(1); }
-        // &.portfolio { display: none; }
-       
-      } // li
-    } // ul
-  } // nav
-  .hide { display: none !important; }
+//  .hide { display: none !important; }
 } // body
-
-body#body_home:not(.body_servs) {
-  nav#menu ul li {
-
-      &.servicios.rotate { display: block; font-weight: bold; letter-spacing: 1.3px; z-index:2;
-        a { color:@negro; padding:.5vh; position: fixed; transform:rotate(51deg); left:27.1vw; top:38.6vh; font-size:5.02vw;
-          @media @petiso { transform:rotate(0deg); left:20vw; font-size:3.08vw; }
-          @media @min_700 { left:24.1vw; top:35.6vh; font-size:1.48vw; }
-
-          @media @notebook { left:25.1vw; top:37vh; font-size:1.48vw; }
-          @media @tablet { transform:rotate(0deg); top:38vh; left:17.2vw; font-size:4vw; }
-
-
-
-        }
-      }
-
-      &.servicios.quieto { .fn-botones_abajo_der; bottom:20px; background: url('@{img}servicios.png') no-repeat center bottom / 100% 100%; }
-
-      &.trabajos.scroll { .tiempo_1; .scroll-me; background:url('@{img}cunia.svg') no-repeat center bottom / 98% auto; position: fixed; top:92vh; right: 70vw; font-size: 1.58vw; text-shadow: 0 0 .3em black; padding-bottom: 8px;
-        a { cursor:progress; color:@blanco; font-size:2em;
-          span {  color:@blanco; }
-          @media @min_900 { font-size:1.95vw }
-        }
-      } 
-      &.trabajos.quieto { display: none;  color:@blanco;
-        a span {  color:@blanco; }
-      }
-      &.servicios.scroll { 
-        a { background: fadeout(@naranja,40%); }
-      }
-
-  }
-}
-
-body#body_home.body_servs {
-  nav#menu ul li {
-    &.servicios { display: none; }
-    &.trabajos.quieto { top:12px; left:15px; 
-      a span { display: block; color:@negro; font-weight: bold; font-size:1.5em; 
-        &:before { content:"< "; font-size:1em; color:fadeout(@negro,40%); }
-      }
-    }
-    &.trabajos.scroll { top:inherit; bottom:20px; 
-      span { display: none; }
-    }
-
-    &.trabajos.scroll { position: fixed; .fn-botones_abajo_der; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; // right:@right_pos !important; //right:5.8vw !important; 
-      
-      a { float: left; display: block;  }
-
-      .fn_trabajosSize;
-
-    }
-
-  } //   nav#menu ul li
-} // body#body_home.body_servs
-
-
-body#body_works { 
-
-@p0:0%;
-@p33:13%;
-@p34:@p33 + .1;
-@p67:86.9%;
-@p68:@p67 + .1;
-@p100:100%;
-@color_1:rgba(242,106,33,1);
-// @color_2:rgba(224,228,204,1);
-@color_3:rgba(30,30,30,1);
-
-background: @color_1;
-background: -moz-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
-background: -webkit-gradient(left top, right top, color-stop(@p0, @naranja), color-stop(@p33, @naranja), color-stop(@p34, @naranja), color-stop(@p67, @negro), color-stop(@p68, @negro), color-stop(@p100, @negro));
-background: -webkit-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
-background: -o-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
-background: -ms-linear-gradient(left, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
-background: linear-gradient(to right, @naranja @p0, @naranja @p33, @naranja @p34, @negro @p67, @negro @p68, @negro @p100);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f26a21', endColorstr='#1e1e1e', GradientType=1 );
-
-width: 100%; height: 100vh;
-
-  nav#menu { display: block; z-index: 4;
-    ul li { 
-//      &.trabajos { position: fixed; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; right:@right_pos !important; .fn_trabajosSize; }
-      &.portfolio { display: none;}
-    }
-  }
-
-
-
-
 
 
 
@@ -1006,7 +1128,7 @@ body#body_ficha { background:@clarito;
     }
   }
   nav#menu { display: block; width:65px; right: 5%; z-index: 5;
-    li.trabajos { position: fixed; .fn-botones_abajo_der; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; }
+    li.clientes { position: fixed; .fn-botones_abajo_der; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; }
   }
 } // body#body_ficha
 
@@ -1056,14 +1178,28 @@ body#body_ficha section#ficha {
   }
 }
 
+
+// REACT . reaccionar
+body#body_contact,
+body#body_works,
+body#body_ficha,
+body#body_servs {
+  header {
+    #punto,
+    em { display: none !important; }
+  }
+}
+
 body#body_contact,
 body#body_works,
 body#body_ficha {
   nav#menu { display: block; z-index: 4;
     ul li { 
-      &.trabajos { position: fixed; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; .fn_trabajosSize; .fn-botones_abajo_der; }
+      &.clientes { position: fixed; bottom:10px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer; .fn_clientesSize; .fn-botones_abajo_der; }
     }
   } // nav#menu
+
+
 
   @media @max_900 { overflow-x: hidden;
     nav#menu { width: 70%; bottom:28px; left:14%; z-index: 5; 
@@ -1074,10 +1210,10 @@ body#body_ficha {
         &.skype { float:left; position: relative !important; margin:0 10px 0 0; clear:none;  width: 45px; height:45px; top:0; right: 0;  // transform:scale(0)
           a { float:left; width: 45px; height:45px; }
         }
-        &.trabajos { position: fixed; .fn-botones_abajo_der; right: 18px;  bottom:17px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer;
+        &.clientes { position: fixed; .fn-botones_abajo_der; right: 18px;  bottom:17px; background: url('@{img}home.png') no-repeat center bottom / 100% 100%; cursor:pointer;
           a { float:left; width: 45px; height:45px; }
         }
-        &.portfolio { right: 15px; bottom: 75px;  }
+        &.trabajos { right: 15px; bottom: 75px;  }
         &.flags { top:0; right:5px; }
       }
     } // nav#menu
@@ -1085,7 +1221,7 @@ body#body_ficha {
 }
 
 
-  body#body_ficha nav#menu ul li.portfolio {  
+  body#body_ficha nav#menu ul li.trabajos {  
     @media @max_900 { bottom: 85px; left:30px; }
     @media @max_700 { bottom: 70px; left:13px; }
     @media @min_900 { bottom: 80px; }

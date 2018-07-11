@@ -1,14 +1,35 @@
 export default [
   {
     title: 'Inicio',
-    url: '/'
+    clase: 'clientes',
+    url: ''
   },
   {
     title: 'Servicios',
-    url: '/servicios'
+    clase: 'servicios',
+    url: 'servicios'
   },
   {
     title: 'Trabajos',
-    url: '/trabajos'
+    clase: 'trabajos',
+    url: 'trabajos'
   }
+  // ,
+  // {
+  //   title: 'mail',
+  //   url: 'mail'
+  // },
+  // {
+  //   title: 'messenger',
+  //   url: 'messenger'
+  // },
+  // {
+  //   title: 'skype',
+  //   url: 'skype'
+  // },
+  // {
+  //   title: 'idioma',
+  //   url: 'idioma'
+  // }
+
 ];

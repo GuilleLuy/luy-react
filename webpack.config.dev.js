@@ -20,7 +20,8 @@ const PATHS = {
 export default {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-       'webpack-hot-middleware/client?reload="true"', PATHS.index
+       'webpack-hot-middleware/client?reload="true"', 
+        PATHS.index
     ],
     mode:'development',
     output: { 
@@ -69,20 +70,17 @@ export default {
                 use: ['style-loader','css-loader',"less-loader"]
             },
             
-            // {
-            //     test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            //     loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-            // },
             {
-                test: /\.(ttf|ico|svg|eot|jpg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            },
+
+            {
+                test: /\.(ttf|ico|eot|jpg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
                 loaders: ['url-loader']
                 //([?#]+[A-Za-z0-9-_]*)*$/,
             }
 
-            // {
-            //     test: /\.(jpg|png|ico|eot|svg|ttf|woff|woff2)$/,
-            //     loader: 'file-loader?name=./fonts/[name].[ext]'
-            //   }
 
 
         ]
